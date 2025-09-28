@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="bday.png" />
+  <title>Happy Birthday!</title>
+  <link rel="icon" href="https://i.ibb.co.com/hXZsYxZ/heart.png">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    
+    body {
+      background: linear-gradient(to bottom right, red, green);
+      color: #000000;
+      font-family: 'Poppins', sans-serif;
+      overflow: auto;
+    }
+
+
+
+
+    .hidden {
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .show {
+      opacity: 1;
+    }
+
+    .page {
+      min-height: 100vh;
+      height: auto;
+      width: 100vw;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1s ease;
+    }
+
+    .page.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .highlight {
+      color: #59e22b;
+      font-weight: bold;
+    }
+
+    .button {
+      background-color: #42de17;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-top: 30px;
+      transition: background 0.3s;
+    }
+
+    .button:hover {
+      background-color:  #ff6f91;;
+    }
+
+    img {
+      max-width: 70vw;
+      max-height: 50vh;
+      margin-bottom: 20px;
+    }
+
+    .letter {
+      white-space: pre-line;
+      font-size: 1.1rem;
+      max-width: 600px;
+      text-align: left;
+      border-left: 3px solid #000000;
+      padding-left: 15px;
+      min-height: 200px;
+    }
+
+    .falling {
+      position: fixed;
+      top: -30px;
+      font-size: 24px;
+      animation: fall linear infinite;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    .pink-heart {
+      color: #9370db;
+    }
+
+    .yellow-star {
+      color: #dda0dd;
+    }
+
+    .music-control {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      z-index: 9999;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(120vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .button {
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
+
+      .letter {
+        font-size: 1rem;
+      }
+    }
+
+
+#page2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #122139; 
+    text-align: center;
+  }
+
+  #page2 h2 {
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  #page2 .container {
+    position: relative;
+    transform: scale(0.8);
+    margin-bottom: 20px;
+  }
+
+  .page2-text {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+
+
+ .button {
+      background-color: #42de17;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-top: 30px;
+      transition: background 0.3s;
+    }
+
+    .button:hover {
+      background-color:  #ff6f91;;
+    }
+
+
+
+  #page2 .button, {
+    margin-top: 10px;
+    background: #42de17;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+  }
+
+  #page2 .button:hover {
+    background: #ff6f91;
+  }
+
+
+
+.container {
+  width: 100px;
+  height: 300px;
+  margin: 0 auto; 
+  transform: scale(0.6);
+  position: relative; 
+}
+.container div {
+  position: absolute;
+}
+
+
+.container .rose-petals > div {
+  background: #d52d58;
+  width: 45px;
+  height: 80px;
+  position: absolute;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.container .rose-petals > div:nth-child(1) {
+  border-radius: 15px;
+  left: 20px;
+  top: -6px;
+  background: #d52d58;
+}
+.container .rose-petals > div:nth-child(2), .container .rose-petals > div:nth-child(4), .container .rose-petals > div:nth-child(6) {
+  border-radius: 0px 30px 0px 30px;
+  background: #b81b43;
+  left: 0;
+  transform-origin: bottom right;
+}
+.container .rose-petals > div:nth-child(3), .container .rose-petals > div:nth-child(5), .container .rose-petals > div:nth-child(7) {
+  border-radius: 30px 0px 30px 0px;
+  left: 40px;
+  transform-origin: bottom left;
+}
+.container .rose-petals > div:nth-child(2) {
+  -moz-animation: openRose2 3s ease-in-out;
+  -webkit-animation: openRose2 3s ease-in-out;
+  animation: openRose2 3s ease-in-out;
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  z-index: 5;
+  background: #9e183a;
+  top: 10px;
+  height: 70px;
+  -moz-animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+.container .rose-petals > div:nth-child(3) {
+  -moz-animation: openRose3 3s ease-in-out;
+  -webkit-animation: openRose3 3s ease-in-out;
+  animation: openRose3 3s ease-in-out;
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  z-index: 4;
+  background: #9e183a;
+  top: 10px;
+  height: 70px;
+  -moz-animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+.container .rose-petals > div:nth-child(4) {
+  -moz-animation: openRose4 3s ease-in-out;
+  -webkit-animation: openRose4 3s ease-in-out;
+  animation: openRose4 3s ease-in-out;
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  z-index: 3;
+  background: #b81b43;
+  top: 5px;
+  height: 75px;
+  -moz-animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+.container .rose-petals > div:nth-child(5) {
+  -moz-animation: openRose5 3s ease-in-out;
+  -webkit-animation: openRose5 3s ease-in-out;
+  animation: openRose5 3s ease-in-out;
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  z-index: 2;
+  background: #b81b43;
+  top: 5px;
+  height: 75px;
+  -moz-animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+.container .rose-petals > div:nth-child(6) {
+  -moz-animation: openRose6 3s ease-in-out;
+  -webkit-animation: openRose6 3s ease-in-out;
+  animation: openRose6 3s ease-in-out;
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  z-index: 1;
+  background: #c9204b;
+  top: "";
+  height: "";
+  -moz-animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+.container .rose-petals > div:nth-child(7) {
+  -moz-animation: openRose7 3s ease-in-out;
+  -webkit-animation: openRose7 3s ease-in-out;
+  animation: openRose7 3s ease-in-out;
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  z-index: 0;
+  background: #c9204b;
+  top: "";
+  height: "";
+  -moz-animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+.container .rose-leaves > div:nth-last-child(1) {
+  width: 55px;
+  height: 30px;
+  background: #338f37;
+  position: absolute;
+  top: 60px;
+  left: 15px;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+}
+.container .rose-leaves > div:nth-child(1) {
+  width: 6px;
+  height: 230px;
+  border: none;
+  top: 80px;
+  background: #066406;
+  left: 40px;
+}
+.container .thorns > div {
+  width: 30px;
+  height: 30px;
+  background: #066406;
+  top: 100px;
+  left: 10px;
+}
+.container .thorns > div:after {
+  width: 41px;
+  height: 31px;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  background: #122139;
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 17px;
+}
+.container .thorns > div:before {
+  width: 41px;
+  height: 31px;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  background: #122139;
+  content: "";
+  position: absolute;
+  left: -11px;
+  top: -11px;
+  z-index: 0;
+}
+.container .thorns > div:nth-child(2) {
+  top: 150px;
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  left: 45px;
+}
+.container .thorns > div:nth-child(3) {
+  top: 180px;
+}
+.container .thorns > div:nth-child(4) {
+  top: 220px;
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  left: 45px;
+}
+.container .sparkles {
+  bottom: -40px;
+}
+.container .sparkles > div {
+  width: 4px;
+  height: 4px;
+  border-radius: 100px;
+  background: #ff96c0;
+  box-shadow: 0px 0px 12px 2px #ff4e85;
+  bottom: 0;
+  opacity: 0;
+  -moz-animation: sparkle 4s ease-in-out infinite;
+  -webkit-animation: sparkle 4s ease-in-out infinite;
+  animation: sparkle 4s ease-in-out infinite;
+}
+.container .sparkles > div:nth-child(1) {
+  left: 60px;
+  -moz-animation-delay: 3s;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+}
+.container .sparkles > div:nth-child(2) {
+  left: 158px;
+  -moz-animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+.container .sparkles > div:nth-child(3) {
+  left: -22px;
+  -moz-animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.container .sparkles > div:nth-child(4) {
+  left: 10px;
+  -moz-animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.container .sparkles > div:nth-child(5) {
+  left: 177px;
+  -moz-animation-delay: 3s;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+}
+.container .sparkles > div:nth-child(6) {
+  left: -82px;
+  -moz-animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+.container .sparkles > div:nth-child(7) {
+  left: 45px;
+  -moz-animation-delay: 3s;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+}
+.container .sparkles > div:nth-child(8) {
+  left: 74px;
+  -moz-animation-delay: 3s;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+}
+.container .sparkles > div:nth-child(9) {
+  left: -79px;
+  -moz-animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+
+@-webkit-keyframes $animationName {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 250px;
+  }
+}
+@-moz-keyframes sparkle {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 250px;
+  }
+}
+@-ms-keyframes sparkle {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 250px;
+  }
+}
+@keyframes sparkle {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 250px;
+  }
+}
+@-webkit-keyframes $animationName {
+  50% {
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    top: 80px;
+    left: 100px;
+  }
+  100% {
+    -moz-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    -webkit-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+    top: 210px;
+    left: -30px;
+  }
+}
+@-moz-keyframes openRose2 {
+  50% {
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    top: 80px;
+    left: 100px;
+  }
+  100% {
+    -moz-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    -webkit-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+    top: 210px;
+    left: -30px;
+  }
+}
+@-ms-keyframes openRose2 {
+  50% {
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    top: 80px;
+    left: 100px;
+  }
+  100% {
+    -moz-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    -webkit-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+    top: 210px;
+    left: -30px;
+  }
+}
+@keyframes openRose2 {
+  50% {
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    top: 80px;
+    left: 100px;
+  }
+  100% {
+    -moz-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    -webkit-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+    top: 210px;
+    left: -30px;
+  }
+}
+@-webkit-keyframes $animationName {
+  100% {
+    -moz-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg);
+  }
+}
+@-moz-keyframes openRose3 {
+  100% {
+    -moz-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg);
+  }
+}
+@-ms-keyframes openRose3 {
+  100% {
+    -moz-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg);
+  }
+}
+@keyframes openRose3 {
+  100% {
+    -moz-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg);
+  }
+}
+@-webkit-keyframes $animationName {
+  100% {
+    -moz-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+  }
+}
+@-moz-keyframes openRose4 {
+  100% {
+    -moz-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+  }
+}
+@-ms-keyframes openRose4 {
+  100% {
+    -moz-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+  }
+}
+@keyframes openRose4 {
+  100% {
+    -moz-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+  }
+}
+@-webkit-keyframes $animationName {
+  100% {
+    -moz-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+  }
+}
+@-moz-keyframes openRose5 {
+  100% {
+    -moz-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+  }
+}
+@-ms-keyframes openRose5 {
+  100% {
+    -moz-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+  }
+}
+@keyframes openRose5 {
+  100% {
+    -moz-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+  }
+}
+@-webkit-keyframes $animationName {
+  50% {
+    box-shadow: 0px 0px 60px #f594b8;
+  }
+}
+@-moz-keyframes glowing {
+  50% {
+    box-shadow: 0px 0px 60px #f594b8;
+  }
+}
+@-ms-keyframes glowing {
+  50% {
+    box-shadow: 0px 0px 60px #f594b8;
+  }
+}
+@keyframes glowing {
+  50% {
+    box-shadow: 0px 0px 60px #f594b8;
+  }
+}
+
+
+#page1 {
+background-color: #ffebeb; 
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+text-align: center;
+padding: 20px;
+}
+
+.letterText {
+  color: white;
+}
+
+#letterHead {
+  color: white;
+}
+
+
+
+#page1 .photo-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 15px;
+margin-bottom: 20px;
+}
+
+
+#page1 .photo-grid img {
+width: 150px;
+height: 150px;
+object-fit: cover;
+border-radius: 12px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#page2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  min-height: 100vh;
+  text-align: center;
+  background: #122139;
+  padding: 0; 
+}
+
+#page2 h2 {
+  color: white;
+  margin: 0 0 20px 0; 
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+#page2 .container {
+  margin-bottom: 20px; 
+}
+
+
+
+#letterText::first-letter {
+  font-size: 3em;           /* bigger than normal text */
+  font-family: 'Great Vibes', cursive; /* cursive font */
+  float: left;
+  margin-right: 5px;
+  line-height: 1;
+  transform: translateY(-1em); /* adjust vertical alignment */
+}
+
+
+
+
+
+
+
+
+#page3 {
+  display: flex;
+  flex-direction: column;
+  background-color: #122139;
+}
+
+
+
+
+
+
+
+
+
+#page4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+    background-image: linear-gradient(to bottom right, green, white);
+    background-repeat: no-repeat; 
+  color: black;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+#page4 h2 {
+margin-bottom: 20px;
+font-size: 2rem;
+font-weight: bold;
+color: #FF1493;
+}
+
+.lyrics-container {
+  display: flex;
+  flex-direction: row;  
+  gap: 20px;
+  width: 90%;
+  max-width: 1000px;
+  align-items: flex-start;
+justify-content: space-between;
+flex-wrap: wrap;
+background: rgba(255, 255, 255, 0.3);
+padding: 15px;
+border-radius: 15px;
+
+}
+
+.lyrics {
+  flex: 1;
+  text-align: left;
+  font-size: 1.1rem;
+  line-height:  1.5;
+  overflow-y: auto;
+  max-height:70vh;
+  color:oklch(from color l c h)
+}
+
+.letter-box {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 700px;
+  width: 90%;
+  max-height: 70vh; 
+  overflow-y: auto; 
+  margin: 20px auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#letterText::-webkit-scrollbar {
+    width: 10px;
+}
+
+#letterText::-webkit-scrollbar-thumb {
+    background-color: #1a2a4d; /* slightly lighter than #122139 for visibility */
+    border-radius: 10px;
+    opacity: 0.8;
+}
+
+#letterText::-webkit-scrollbar-track {
+    background: #122139; /* same as page 3 background */
+}
+
+.letterText {
+  color: black;
+}
+
+
+
+.cake-container {
+position: relative;
+display: flex;
+justify-content: center;
+}
+
+.cake{
+  width: 300px;
+  height: auto;
+}
+
+.iry-pic {
+position: absolute;
+left: 60%;
+top: 50%;
+transform: translateY(-70%);
+width: 300px;
+height: auto;
+}
+
+
+
+.balloon {
+position: absolute;
+right: 70%;
+top: 60%;
+transform: translateY(-70%);
+width: 275px;
+height: auto;
+}
+
+
+
+.birthday-container {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+
+
+.overlap-pic {
+  position: absolute;
+ top: -125px;
+ left: 50%;
+ transform: translateX(-50%);
+ height: auto;
+ width: 300px;
+ margin-top: 20px;
+
+}
+
+.happybirthday {
+  font-family: "Brush Script MT", cursive;;
+  font-size: 70px;
+z-index: 1;
+position: relative;
+top: 20px;
+}
+
+</style>
+
+  
+
+
+    
+  </style>
+</head>
+<body>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <div class="page active" id="page1">
+<div class="birthday-container">
+      <img src="pic3.png" alt="Iry" class="overlap-pic">
+        <h1><span class="happybirthday">Happy Birthday Iry! </span></h1>
+  </p>
+</div>
+
+  <div class="cake-container">
+    <img src="birthcake.png" alt="birthcake" class="cake" />
+    <img src="pic1.png" alt="Iry" class="iry-pic">
+    <img src="balloon1.png" alt="balloon1" class="balloon">
+  </div>
+  <Div>
+    <p class="birthday-message">
+    Hi Iry, I made a simple digital gift for you. <br>
+    I hope you'll like it.
+  </Div>
+
+<button class="button" onclick="goToPage(2)">Click me!</button>
+
+</div>
+
+  <div class="page" id="page2">
+  <h2>A Rose to Remind You How Loved You Are</h2>
+
+
+  <div class="container">
+    <div class="glass"></div>
+    <div class="thorns">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="glow"></div>
+    <div class="rose-leaves">
+      <div></div>
+      <div></div>
+    </div>
+    <div class="rose-petals">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="sparkles">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <p class="page2-text"> A special letter is also waiting just for you </p>
+  <button id="openLetterButton" class="button" style="display:none;" onclick="goToPage(3)">Open Letter</button>
+</div>
+
+
+<div class="page" id="page3" style="font-family: 'Dancing Script', cursive;">
+    <h2 id="letterHead">The Words I’ve Been Wanting to Say</h2>
+    <div class="letter-box">
+    <div class="letter" id="letterText">
+      </div>
+      </div>
+</div>
+
+  <audio id="bg-music" src="Party.mp3" autoplay loop muted></audio>
+  <audio id="click-sound" src="https://public.youware.com/users-website-assets/prod/50390417-3924-48fa-b7cc-21adb627e36e/256113_3263906-lq.mp3" preload="auto"></audio>
+  <div class="music-control" id="musicControl"></div>
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    const fullLetter = `Dear Iry,
+
+Before anything else, I would like to thank my most precious, favorite, closest, and number one friend for coming into my life. I would say that I feel so lucky to have found you and to be able to befriend you even if it’s just online.  I let others come and go from my life, but you, I hope we never drift apart, although being dormant friends is okay, because I know our connection is rare, special, and meaningful; I’ve never connected with anyone like this before. If I ever feel like disappearing, I’ll never disappear from you. You’re someone I’ll never stop valuing. To be honest, I sometimes get hurt to think that we’re only able to interact online and can’t bond in real life yet. But soon, don’t you worry, we will. 
+
+I sometimes wonder if I’m too reserved with you since I don’t yap or vent to you that often. Of course, I would love to but honestly, just hearing everything you have to say already satisfies that desire of mine. When the world feels heavy for me, just hearing you talk about your day, vent, or your thoughts is enough to make it feel lighter, like I don’t even need to let out my own heavy feelings anymore. So if you ever wondered if whether I’m too reticent with you, and if you ever feel guilty that the spotlight is always on you, here’s your answer. Just so you know, you’re the ONLY person I could talk to endlessly without feeling drained because my energy for you never goes out. Talking to other people online already tires me out actually, even after just four messages exchanged, but with you, it’s really different. 
+
+You’re quite the person, every once in a while, you find someone who stands out as a person, not because of their looks, but because of the way they think, act, and feel. There is something about their energy that I unfortunately can’t put into words. They just feel different from everyone else, unique, irreplaceable, and very impossible to imitate. And that is you, for so many reasons. That is what I thought about you even before we became best friends.
+
+You know, Iry, I actually stopped believing in coincidences anymore. I’ll keep this short lang ah, do you remember back then when I was being cold, mean, and said a bunch of terrible things to you like I killed a cat before or that I was an INTJ. It was all an act btw, I was actually just experimenting to see how someone would react to a person acting like that. I don’t really know why I chose you back then but I think that served as the catalyst for me to see something in you like your boldness, your values. It’s “funny” to think that the very person I tested ended up becoming most precious and closest online friend. 
+
+As I was saying, I really admire you for so many reasons, I would not be able to address all of them exactly but, for having so many passions, for feeling things deeply, for being smart, ambitious, funny, polite, compassionate, for being a joyful person despite all the weight you carry, and for your resilience. Those things about you had a deep impression on me back then, until now. The first thing I admired about you is that you’re a great writer; your words feel like art to me, they’re beautiful. And sakto I started journaling back then because of the chest pain thingy we both experienced, you kind of inspired me to journal more so I can also express my thoughts, ideas, and feelings clearing in my mind. I will always be thankful to you for that. Oh I forgot, your also firm but at the same time supportive. 
+
+Speaking of chest pain, I really never share my vulnerabilities with anyone no matter how heavy it is. But when we talked about it (the chest pain thingy) you lowered my walls in a way I didn’t expect. For the first time, I realized there really are people pa pala who are willing to listen to me. You didn’t just listen to me actually, you also understood me. That was the very first time I truly felt seen. And you know, even though you didn’t offer solutions, just knowing someone who understand, share my pain made my dark world lighter. You were the light in my darkness, and for that, I’m truly grateful. 
+
+And oh, do you remember that one time when I asked you for advice on how to detach from someone back in the summer of 2024? I told you it was my first time feeling attached to someone. Well… looking back, I was just bad at identifying it I think. Of course I have been attached to someone before, but that time felt so intense that I thought that was my first. I don’t remember exactly why I didn’t tell you this back then, maybe because of this ‘intimacy avoidance’ or whatchamacallit. But that person was actually you. I got really attached to you back then because of how deep our connection is. I think it took me a month to detach, you’re the one to blame (sarcastically). There were moments that I missed you, but I didn’t really mind, because we were both busy with school. And I’ve always believed that true friends find their way back to each other when the time and circumstances are right. So yeah… that person I was talking about all along was you. 
+
+There are so many things I want to say to you, but I know there will be specific time for me to unravel those. Anyway, I’ll end this for now since I know you don’t like reading HAHAHAHA. Time may pass, life may drift us apart, but I’m sure my love for you will remain constant. 
+
+Happy Birthday, Iry. May your day be as wonderful and bright as you are. 
+
+With all my heart,
+    Frank
+
+
+`;
+
+
+const letterContainer = document.getElementById('letterText');
+
+
+
+function goToPage(pageNum) {
+  const pages = document.querySelectorAll('.page');
+  pages.forEach(p => p.classList.remove('active'));
+  const next = document.getElementById(`page${pageNum}`);
+  next.classList.add('active');
+
+  if (pageNum === 3) {
+    const music = document.getElementById("bg-music");
+    music.muted = false;
+    music.play().catch(e => console.log("Autoplay blocked:", e));
+    document.getElementById("musicControl").textContent = "";
+
+    confetti({ particleCount: 150, spread: 100, origin: { y: 0.6 } });
+    typeText(fullLetter, document.getElementById('letterText'), 25);
+    startFallingSymbols();
+  }
+}
+
+function typeText(text, element, speed) {
+  element.innerHTML = '';
+  let i = 0;
+  function type() {
+    if (i < text.length) {
+      element.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    }
+  }
+  type();
+}
+
+setTimeout(() => {
+  const btn = 
+  document.getElementById('nextButton');
+    btn.style.display = 'inline-block';
+}, 100000);
+
+setTimeout(() => {
+  const btn = 
+  document.getElementById('openLetterButton');
+    btn.style.display = 'inline-block';
+}, 5000);
+
+function stopFallingSymbols() {
+  clearInterval(fallingInterval);
+}
+
+if (pageNum !== 3) stopFallingSymbols();
+
+function startFallingSymbols() {
+  setInterval(() => {
+    const el = document.createElement('div');
+    el.classList.add('falling');
+    const isHeart = Math.random() < 0.5;
+    el.innerText = isHeart ? '💚' : '❤️';
+    el.classList.add(isHeart ? 'pink-heart' : 'yellow-star');
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.animationDuration = (3 + Math.random() * 2) + 's';
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 6000);
+  }, 300);
+}
+
+
+
+
+  </script>
+</body>
+</html>
